@@ -6,207 +6,59 @@
     <title>Level A1 Curriculum | Deutsch Desi</title>
     <style>
         /* CSS Reset & Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f8f9fa;
-            color: #2d3436;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; background-color: #f8f9fa; color: #2d3436; }
 
         /* Header & Banner */
         .main-header {
             background: linear-gradient(135deg, #2d3436 0%, #000000 100%);
-            color: #FFCC00;
-            padding: 40px 5%;
-            display: flex;
-            align-items: center;
-            border-bottom: 4px solid #FFCC00;
+            color: #FFCC00; padding: 40px 5%; display: flex; align-items: center; border-bottom: 4px solid #FFCC00;
         }
+        .logo { width: 60px; height: 60px; margin-right: 20px; display: flex; align-items: center; justify-content: center; color: white; border: 2px solid #FFCC00; font-weight: bold; }
+        .banner-text h1 { font-size: 2.5rem; letter-spacing: 2px; }
 
-        .logo {
-            width: 80px;
-            height: auto;
-            margin-right: 20px;
-            /* Placeholder for your logo */
-            background-color: #444;
-            border-radius: 5px;
-        }
-
-        .banner-text h1 {
-            font-size: 2.5rem;
-            letter-spacing: 2px;
-        }
-
-        /* Layout Wrapper for Sidebar and Content */
-        .layout-wrapper {
-            display: flex;
-            max-width: 1200px;
-            margin: 30px auto;
-            padding: 0 20px;
-            gap: 30px;
-        }
+        /* Layout Wrapper */
+        .layout-wrapper { display: flex; max-width: 1200px; margin: 30px auto; padding: 0 20px; gap: 30px; }
 
         /* Sidebar Navigation */
-        .sidebar {
-            flex: 1;
-            background: #2d3436;
-            color: white;
-            padding: 25px;
-            border-radius: 8px;
-            min-height: 450px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        .sidebar h3 {
-            color: #FFCC00;
-            margin-bottom: 20px;
-            font-size: 1.2rem;
-            border-bottom: 1px solid #444;
-            padding-bottom: 10px;
-            text-transform: uppercase;
-        }
-
-        .lesson-list {
-            list-style: none;
-        }
-
-        .lesson-list li {
-            margin-bottom: 15px;
-        }
-
-        .lesson-list a {
-            color: #ddd;
-            text-decoration: none;
-            transition: 0.3s;
-            font-size: 1rem;
-            display: block;
-        }
-
-        .lesson-list a:hover, .lesson-list a.active {
-            color: #FFCC00;
-            transform: translateX(5px);
-        }
+        .sidebar { flex: 1; background: #2d3436; color: white; padding: 25px; border-radius: 8px; min-height: 450px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .sidebar h3 { color: #FFCC00; margin-bottom: 20px; font-size: 1.2rem; border-bottom: 1px solid #444; padding-bottom: 10px; text-transform: uppercase; }
+        .lesson-list { list-style: none; }
+        .lesson-list li { margin-bottom: 15px; }
+        .lesson-list a { color: #ddd; text-decoration: none; transition: 0.3s; font-size: 1rem; display: block; cursor: pointer; }
+        .lesson-list a:hover, .lesson-list a.active { color: #FFCC00; transform: translateX(5px); font-weight: bold; }
 
         /* Main Content Area */
-        .content-area {
-            flex: 3;
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            position: relative;
-        }
+        .content-area { flex: 3; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); min-height: 500px; }
+        .lesson-section { display: none; } /* Hidden by default */
+        .active-section { display: block; } /* Shown when active */
 
-        .content-area h2 {
-            margin-bottom: 20px;
-            color: #2d3436;
-            border-left: 5px solid #FFCC00;
-            padding-left: 15px;
-        }
+        h2 { margin-bottom: 20px; color: #2d3436; border-left: 5px solid #FFCC00; padding-left: 15px; }
+        p { margin-bottom: 15px; color: #555; font-size: 1.1rem; }
 
-        .content-area p {
-            margin-bottom: 15px;
-            color: #555;
-            font-size: 1.1rem;
-        }
-
-        /* Multilingual Table Styling */
-        .table-container {
-            margin: 30px 0;
-            overflow-x: auto;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-
-        th, td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid #eee;
-        }
-
-        th {
-            background-color: #f8f9fa;
-            color: #2d3436;
-            font-weight: bold;
-            border-bottom: 2px solid #FFCC00;
-        }
-
-        tr:hover {
-            background-color: #fffdf5;
-        }
+        /* Table Styling */
+        .table-container { margin: 30px 0; overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        th, td { padding: 15px; text-align: left; border-bottom: 1px solid #eee; }
+        th { background-color: #f8f9fa; color: #2d3436; border-bottom: 2px solid #FFCC00; }
+        tr:hover { background-color: #fffdf5; }
 
         /* Signature Section */
-        .signature {
-            margin-top: 50px;
-            text-align: right;
-            border-top: 1px solid #eee;
-            padding-top: 20px;
-            font-style: italic;
-        }
+        .signature { margin-top: 50px; text-align: right; border-top: 1px solid #eee; padding-top: 20px; font-style: italic; }
 
         /* Footer */
-        .footer {
-            background-color: #2d3436;
-            color: white;
-            padding: 40px 0 20px 0;
-            margin-top: 60px;
-        }
+        .footer { background-color: #2d3436; color: white; padding: 40px 0 20px 0; margin-top: 60px; }
+        .footer-top { display: flex; justify-content: flex-end; padding: 0 5% 20px 0; }
+        .contact-info { text-align: right; font-size: 0.95rem; }
+        .footer-bottom { text-align: center; border-top: 1px solid #444; padding-top: 20px; font-size: 0.85rem; color: #bbb; }
 
-        .footer-top {
-            display: flex;
-            justify-content: flex-end;
-            padding: 0 5% 20px 0;
-        }
-
-        .contact-info {
-            text-align: right;
-            font-size: 0.95rem;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            border-top: 1px solid #444;
-            padding-top: 20px;
-            font-size: 0.85rem;
-            color: #bbb;
-        }
-
-        /* Responsive adjustments for Mobile */
-        @media (max-width: 768px) {
-            .layout-wrapper {
-                flex-direction: column;
-            }
-            .sidebar {
-                min-height: auto;
-            }
-            .main-header {
-                text-align: center;
-                flex-direction: column;
-            }
-            .logo {
-                margin: 0 0 15px 0;
-            }
-        }
+        @media (max-width: 768px) { .layout-wrapper { flex-direction: column; } .main-header { text-align: center; flex-direction: column; } .logo { margin-bottom: 15px; } }
     </style>
 </head>
 <body>
 
-    <!-- Header Banner -->
     <header class="main-header">
-        <div class="logo-area">
-            <!-- You can replace this div with <img src="logo.png"> -->
-            <div class="logo" style="height: 60px; width: 60px; display: flex; align-items: center; justify-content: center; color: white; border: 2px solid #FFCC00;">DD</div>
-        </div>
+        <div class="logo">DD</div>
         <div class="banner-text">
             <h1>Deutsch Desi</h1>
             <p>Level A1: Beginner German Course</p>
@@ -214,67 +66,63 @@
     </header>
 
     <div class="layout-wrapper">
-        <!-- Left Side Menu -->
+        <!-- Sidebar Navigation -->
         <aside class="sidebar">
             <h3>German Language A1</h3>
             <ul class="lesson-list">
-                <li><a href="#" class="active">Introduction</a></li>
-                <li><a href="#">Lesson 1: Greetings</a></li>
-                <li><a href="#">Lesson 2: Alphabet</a></li>
-                <li><a href="#">Lesson 3: Letters & Sound</a></li>
-                <li><a href="#">Lesson 4: Introducing Yourself</a></li>
+                <li><a onclick="showLesson('intro')" id="link-intro" class="active">Introduction</a></li>
+                <li><a onclick="showLesson('greetings')" id="link-greetings">Lesson 1: Greetings</a></li>
+                <li><a onclick="showLesson('alphabet')">Lesson 2: Alphabet</a></li>
+                <li><a onclick="showLesson('sounds')">Lesson 3: Letters & Sound</a></li>
+                <li><a onclick="showLesson('intro-self')">Lesson 4: Introducing Yourself</a></li>
             </ul>
         </aside>
 
-        <!-- Center Content Area -->
-        <main class="content-area">
-            <section class="lesson-content">
+        <!-- Main Content Area -->
+        <main class="content-area" id="main-content">
+            
+            <!-- SECTION: INTRODUCTION -->
+            <section id="intro" class="lesson-section active-section">
                 <h2>Welcome to Level A1</h2>
-                <p>
-                    Level A1 is the starting point of your German language journey. In this course, we use a specialized method 
-                    designed specifically for speakers of <strong>Urdu</strong> and <strong>Hindi</strong>.
-                </p>
-                <p>We will focus on building your vocabulary and understanding basic sentence structures through simple, 
-                relatable examples in your native languages.</p>
+                <p>Level A1 is the starting point of your German language journey. In this course, we use a specialized method designed specifically for speakers of <strong>Urdu</strong> and <strong>Hindi</strong>.</p>
+                <div class="table-container">
+                    <table>
+                        <thead><tr><th>German</th><th>English</th><th>Urdu</th><th>Hindi</th></tr></thead>
+                        <tbody>
+                            <tr><td>Guten Tag</td><td>Good Day</td><td>آپ کا دن اچھا گزرے</td><td>शुभ दिन</td></tr>
+                            <tr><td>Wie geht es Ihnen?</td><td>How are you?</td><td>آپ کیسے ہیں؟</td><td>आप कैसे हैं?</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
 
+            <!-- SECTION: LESSON 1 GREETINGS -->
+            <section id="greetings" class="lesson-section">
+                <h2>Lesson 1: German Greetings (Begrüßungen)</h2>
+                <p>In German, greetings change based on the time of day and the level of formality. Below are the most common ways to say hello and goodbye.</p>
+                
                 <div class="table-container">
                     <table>
                         <thead>
                             <tr>
                                 <th>German</th>
                                 <th>English</th>
-                                <th>Urdu</th>
-                                <th>Hindi</th>
+                                <th>Urdu (اردو)</th>
+                                <th>Hindi (हिंदी)</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Guten Tag</td>
-                                <td>Good Day</td>
-                                <td>آپ کا دن اچھا گزرے</td>
-                                <td>शुभ दिन</td>
-                            </tr>
-                            <tr>
-                                <td>Wie geht es Ihnen?</td>
-                                <td>How are you?</td>
-                                <td>آپ کیسے ہیں؟</td>
-                                <td>आप कैसे हैं?</td>
-                            </tr>
-                            <tr>
-                                <td>Kind</td>
-                                <td>Child</td>
-                                <td>بچہ</td>
-                                <td>बच्चा</td>
-                            </tr>
-                            <tr>
-                                <td>Brot</td>
-                                <td>Bread</td>
-                                <td>روٹی / ڈبل روٹی</td>
-                                <td>रोटी</td>
-                            </tr>
+                            <tr><td>Hallo</td><td>Hello</td><td>ہیلو / سلام</td><td>नमस्ते</td></tr>
+                            <tr><td>Guten Morgen</td><td>Good Morning</td><td>صبح بخیر</td><td>शुभ प्रभात</td></tr>
+                            <tr><td>Guten Tag</td><td>Good Day / Afternoon</td><td>آپ کا دن اچھا گزرے</td><td>शुभ दिन</td></tr>
+                            <tr><td>Guten Abend</td><td>Good Evening</td><td>شام بخیر</td><td>शुभ संध्या</td></tr>
+                            <tr><td>Gute Nacht</td><td>Good Night</td><td>شب بخیر</td><td>शुभ रात्रि</td></tr>
+                            <tr><td>Tschüss</td><td>Bye (Informal)</td><td>اللہ حافظ / خدا حافظ</td><td>अलविदा</td></tr>
+                            <tr><td>Auf Wiedersehen</td><td>Goodbye (Formal)</td><td>پھر ملیں گے</td><td>फिर मिलेंगे</td></tr>
                         </tbody>
                     </table>
                 </div>
+                <p><strong>Note:</strong> "Guten Tag" is the most common greeting used from midday until about 6:00 PM.</p>
             </section>
 
             <!-- Signature -->
@@ -285,7 +133,6 @@
         </main>
     </div>
 
-    <!-- Footer Panel -->
     <footer class="footer">
         <div class="footer-top">
             <div class="contact-info">
@@ -298,5 +145,23 @@
         </div>
     </footer>
 
+    <script>
+        function showLesson(lessonId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.lesson-section');
+            sections.forEach(section => section.classList.remove('active-section'));
+
+            // Show the selected section
+            const selected = document.getElementById(lessonId);
+            if(selected) {
+                selected.classList.add('active-section');
+            }
+
+            // Update active state in sidebar
+            const links = document.querySelectorAll('.lesson-list a');
+            links.forEach(link => link.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+        }
+    </script>
 </body>
 </html>
