@@ -5,58 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Level A1 Curriculum | Deutsch Desi</title>
     <style>
-        /* CSS Reset & Base Styles */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; background-color: #f8f9fa; color: #2d3436; }
-
-        /* Header & Banner */
+        body { font-family: 'Segoe UI', Roboto, sans-serif; background-color: #f8f9fa; color: #2d3436; overflow: hidden; }
+        
         .main-header {
             background: linear-gradient(135deg, #2d3436 0%, #000000 100%);
-            color: #FFCC00; padding: 40px 5%; display: flex; align-items: center; border-bottom: 4px solid #FFCC00;
+            color: #FFCC00; padding: 25px 5%; display: flex; align-items: center; border-bottom: 4px solid #FFCC00;
         }
-        .logo { width: 60px; height: 60px; margin-right: 20px; display: flex; align-items: center; justify-content: center; color: white; border: 2px solid #FFCC00; font-weight: bold; }
-        .banner-text h1 { font-size: 2.5rem; letter-spacing: 2px; }
+        .logo { width: 50px; height: 50px; margin-right: 20px; display: flex; align-items: center; justify-content: center; color: white; border: 2px solid #FFCC00; font-weight: bold; }
+        .banner-text h1 { font-size: 2rem; letter-spacing: 2px; }
 
-        /* Layout Wrapper */
-        .layout-wrapper { display: flex; max-width: 1250px; margin: 30px auto; padding: 0 20px; gap: 30px; }
+        .layout-wrapper { display: flex; height: calc(100vh - 170px); max-width: 1400px; margin: 20px auto; padding: 0 20px; gap: 20px; }
 
-        /* Sidebar Navigation */
-        .sidebar { flex: 1; background: #2d3436; color: white; padding: 25px; border-radius: 8px; min-height: 600px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .sidebar h3 { color: #FFCC00; margin-bottom: 20px; font-size: 1.2rem; border-bottom: 1px solid #444; padding-bottom: 10px; text-transform: uppercase; }
+        .sidebar { flex: 1; background: #2d3436; color: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .sidebar h3 { color: #FFCC00; margin-bottom: 20px; font-size: 1.1rem; border-bottom: 1px solid #444; padding-bottom: 10px; text-transform: uppercase; }
         .lesson-list { list-style: none; }
-        .lesson-list li { margin-bottom: 15px; }
-        .lesson-list a { color: #ddd; text-decoration: none; transition: 0.3s; font-size: 1rem; display: block; cursor: pointer; }
-        .lesson-list a:hover, .lesson-list a.active { color: #FFCC00; transform: translateX(5px); font-weight: bold; }
+        .lesson-list li { margin-bottom: 12px; }
+        .lesson-list a { color: #ddd; text-decoration: none; transition: 0.3s; font-size: 0.95rem; display: block; cursor: pointer; }
+        .lesson-list a:hover, .lesson-list a.active { color: #FFCC00; font-weight: bold; transform: translateX(5px); }
 
-        /* Main Content Area */
-        .content-area { flex: 3; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); min-height: 800px; }
-        .lesson-section { display: none; }
-        .active-section { display: block; }
+        /* The Content Window */
+        .content-area { flex: 4; background: white; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); overflow: hidden; }
+        #content-frame { width: 100%; height: 100%; border: none; }
 
-        h2 { margin-bottom: 20px; color: #2d3436; border-left: 5px solid #FFCC00; padding-left: 15px; }
-        h3 { margin: 30px 0 15px 0; color: #d63031; text-decoration: underline; }
-        p { margin-bottom: 15px; color: #555; font-size: 1.1rem; }
-
-        /* Table Styling */
-        .table-container { margin: 20px 0; overflow-x: auto; }
-        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
-        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #eee; }
-        th { background-color: #2d3436; color: #FFCC00; }
-        tr:nth-child(even) { background-color: #fafafa; }
-        tr:hover { background-color: #fffdf0; }
-
-        .pro-note { background: #e3f2fd; border-left: 4px solid #2196f3; padding: 15px; margin: 20px 0; border-radius: 4px; color: #0d47a1; }
-
-        /* Signature Section */
-        .signature { margin-top: 50px; text-align: right; border-top: 1px solid #eee; padding-top: 20px; font-style: italic; }
-
-        /* Footer */
-        .footer { background-color: #2d3436; color: white; padding: 40px 0 20px 0; margin-top: 60px; }
-        .footer-top { display: flex; justify-content: flex-end; padding: 0 5% 20px 0; }
-        .contact-info { text-align: right; font-size: 0.95rem; }
-        .footer-bottom { text-align: center; border-top: 1px solid #444; padding-top: 20px; font-size: 0.85rem; color: #bbb; }
-
-        @media (max-width: 900px) { .layout-wrapper { flex-direction: column; } }
+        .footer { background-color: #2d3436; color: white; padding: 15px 0; position: fixed; bottom: 0; width: 100%; border-top: 2px solid #FFCC00; }
+        .footer-content { display: flex; justify-content: space-around; align-items: center; font-size: 0.85rem; }
     </style>
 </head>
 <body>
@@ -71,148 +44,32 @@
 
     <div class="layout-wrapper">
         <aside class="sidebar">
-            <h3>German Language A1</h3>
+            <h3>Course Content</h3>
             <ul class="lesson-list">
-                <li><a onclick="showLesson('intro')" id="link-intro" class="active">Introduction</a></li>
-                <li><a onclick="showLesson('greetings')">Lesson 1: Greetings</a></li>
-                <li><a onclick="showLesson('alphabet')">Lesson 2: Alphabet A-Z</a></li>
-                <li><a onclick="showLesson('sounds')">Lesson 3: Letters & Sound</a></li>
-                <li><a onclick="showLesson('intro-self')">Lesson 4: Introducing Yourself</a></li>
+                <li><a onclick="loadPage('intro.html')" class="active">Introduction</a></li>
+                <li><a onclick="loadPage('greetings.html')">Lesson 1: Greetings</a></li>
+                <li><a onclick="loadPage('alphabet.html')">Lesson 2: Alphabet A-Z</a></li>
             </ul>
         </aside>
 
-        <main class="content-area" id="main-content">
-            
-            <!-- SECTION: INTRODUCTION -->
-            <section id="intro" class="lesson-section active-section">
-                <h2>Welcome to Level A1</h2>
-                <p>Level A1 is the starting point of your German language journey. In this course, we use a specialized method designed specifically for speakers of <strong>Urdu</strong> and <strong>Hindi</strong>.</p>
-                <p>We will focus on building your vocabulary and understanding basic sentence structures through simple, relatable examples in your native languages.</p>
-                <div class="table-container">
-                    <table>
-                        <thead><tr><th>German</th><th>English</th><th>Urdu</th><th>Hindi</th></tr></thead>
-                        <tbody>
-                            <tr><td>Guten Tag</td><td>Good Day</td><td>آپ کا دن اچھا گزرے</td><td>शुभ दिन</td></tr>
-                            <tr><td>Wie geht es Ihnen?</td><td>How are you?</td><td>آپ کیسے ہیں؟</td><td>आप कैसे हैं?</td></tr>
-                            <tr><td>Kind</td><td>Child</td><td>بچہ</td><td>बच्चा</td></tr>
-                            <tr><td>Brot</td><td>Bread</td><td>روٹی</td><td>रोटी</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-
-            <!-- SECTION: LESSON 1 GREETINGS -->
-            <section id="greetings" class="lesson-section">
-                <h2>Lesson 1: German Greetings (Begrüßungen)</h2>
-                <p>In German, greetings change based on the time of day and the level of formality.</p>
-                <div class="table-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>German</th>
-                                <th>English</th>
-                                <th>Urdu (اردو)</th>
-                                <th>Hindi (हिंदी)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>Hallo</td><td>Hello</td><td>ہیلو / سلام</td><td>नमस्ते</td></tr>
-                            <tr><td>Guten Morgen</td><td>Good Morning</td><td>صبح بخیر</td><td>शुभ प्रभात</td></tr>
-                            <tr><td>Guten Tag</td><td>Good Day / Afternoon</td><td>آپ کا دن اچھا گزرے</td><td>शुभ दिन</td></tr>
-                            <tr><td>Guten Abend</td><td>Good Evening</td><td>شام بخیر</td><td>शुभ संध्या</td></tr>
-                            <tr><td>Gute Nacht</td><td>Good Night</td><td>شب بخیر</td><td>शुभ रात्रि</td></tr>
-                            <tr><td>Tschüss</td><td>Bye (Informal)</td><td>اللہ حافظ</td><td>अलविदा</td></tr>
-                            <tr><td>Auf Wiedersehen</td><td>Goodbye (Formal)</td><td>پھر ملیں گے</td><td>फिर मिलेंगे</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-
-            <!-- SECTION: LESSON 2 FULL ALPHABET -->
-            <section id="alphabet" class="lesson-section">
-                <h2>Lesson 2: The German Alphabet (A-Z)</h2>
-                <p>The names of the letters in German are different from English. Master these sounds first:</p>
-                <div class="table-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Letter</th>
-                                <th>Pronunciation</th>
-                                <th>Urdu/Hindi Guide</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>A</td><td>Ah</td><td>آ (Aa)</td></tr>
-                            <tr><td>B</td><td>Beh</td><td>بے (Bay)</td></tr>
-                            <tr><td>C</td><td>Tseh</td><td>تسے (Tseh)</td></tr>
-                            <tr><td>D</td><td>Deh</td><td>دے (Day)</td></tr>
-                            <tr><td>E</td><td>Eh</td><td>اے (A-ey)</td></tr>
-                            <tr><td>F</td><td>Ef</td><td>ایف (Ef)</td></tr>
-                            <tr><td>G</td><td>Geh</td><td>گے (Gay)</td></tr>
-                            <tr><td>H</td><td>Hah</td><td>ہا (Haa)</td></tr>
-                            <tr><td>I</td><td>Ee</td><td>ای (Ee)</td></tr>
-                            <tr><td>J</td><td>Yot</td><td>یوٹ (Yot)</td></tr>
-                            <tr><td>K</td><td>Kah</td><td>کا (Kaa)</td></tr>
-                            <tr><td>L</td><td>El</td><td>ایل (El)</td></tr>
-                            <tr><td>M</td><td>Em</td><td>ایم (Em)</td></tr>
-                            <tr><td>N</td><td>En</td><td>این (En)</td></tr>
-                            <tr><td>O</td><td>Oh</td><td>او (Oh)</td></tr>
-                            <tr><td>P</td><td>Peh</td><td>پے (Pay)</td></tr>
-                            <tr><td>Q</td><td>Koo</td><td>کو (Koo)</td></tr>
-                            <tr><td>R</td><td>Er</td><td>ایر (Er)</td></tr>
-                            <tr><td>S</td><td>Es</td><td>ایس (Es)</td></tr>
-                            <tr><td>T</td><td>Teh</td><td>ٹے (Tay)</td></tr>
-                            <tr><td>U</td><td>Oo</td><td>اوو (Oo)</td></tr>
-                            <tr><td>V</td><td>Fau</td><td>فاو (Fao)</td></tr>
-                            <tr><td>W</td><td>Veh</td><td>وے (Vay)</td></tr>
-                            <tr><td>X</td><td>Iks</td><td>اکس (Iks)</td></tr>
-                            <tr><td>Y</td><td>Ypsilon</td><td>ایپسیلون</td></tr>
-                            <tr><td>Z</td><td>Tsett</td><td>ٹسیٹ</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h3>Special German Letters</h3>
-                <div class="table-container">
-                    <table>
-                        <thead><tr><th>Letter</th><th>Name</th><th>Sound</th></tr></thead>
-                        <tbody>
-                            <tr><td>Ä / ä</td><td>A-Umlaut</td><td>Like 'e' in 'Bed'</td></tr>
-                            <tr><td>Ö / ö</td><td>O-Umlaut</td><td>Rounded O</td></tr>
-                            <tr><td>Ü / ü</td><td>U-Umlaut</td><td>Rounded U</td></tr>
-                            <tr><td>ß</td><td>Eszett</td><td>Sharp 'S' (سین)</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-
-            <div class="signature">
-                <p><strong>Aijaz Mahar</strong></p>
-                <p>Deutsch Desi</p>
-            </div>
+        <main class="content-area">
+            <!-- This Frame will show the separate lesson files -->
+            <iframe src="intro.html" id="content-frame"></iframe>
         </main>
     </div>
 
     <footer class="footer">
-        <div class="footer-top">
-            <div class="contact-info">
-                <p>Contact: <strong>info.emahar.com</strong></p>
-                <p>WhatsApp: <strong>+XX-XXXXXXXXXX</strong></p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 DeutschDesi.emahar.com | All Rights Reserved</p>
+        <div class="footer-content">
+            <p>Contact: <strong>info.emahar.com</strong></p>
+            <p>&copy; 2026 DeutschDesi.emahar.com</p>
+            <p>Teacher: <strong>Aijaz Mahar</strong></p>
         </div>
     </footer>
 
     <script>
-        function showLesson(lessonId) {
-            const sections = document.querySelectorAll('.lesson-section');
-            sections.forEach(section => section.classList.remove('active-section'));
-
-            const selected = document.getElementById(lessonId);
-            if(selected) { selected.classList.add('active-section'); }
-
+        function loadPage(pageUrl) {
+            document.getElementById('content-frame').src = pageUrl;
+            
             const links = document.querySelectorAll('.lesson-list a');
             links.forEach(link => link.classList.remove('active'));
             event.currentTarget.classList.add('active');
