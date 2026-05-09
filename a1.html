@@ -18,10 +18,10 @@
         .banner-text h1 { font-size: 2.5rem; letter-spacing: 2px; }
 
         /* Layout Wrapper */
-        .layout-wrapper { display: flex; max-width: 1200px; margin: 30px auto; padding: 0 20px; gap: 30px; }
+        .layout-wrapper { display: flex; max-width: 1250px; margin: 30px auto; padding: 0 20px; gap: 30px; }
 
         /* Sidebar Navigation */
-        .sidebar { flex: 1; background: #2d3436; color: white; padding: 25px; border-radius: 8px; min-height: 450px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .sidebar { flex: 1; background: #2d3436; color: white; padding: 25px; border-radius: 8px; min-height: 600px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         .sidebar h3 { color: #FFCC00; margin-bottom: 20px; font-size: 1.2rem; border-bottom: 1px solid #444; padding-bottom: 10px; text-transform: uppercase; }
         .lesson-list { list-style: none; }
         .lesson-list li { margin-bottom: 15px; }
@@ -29,23 +29,23 @@
         .lesson-list a:hover, .lesson-list a.active { color: #FFCC00; transform: translateX(5px); font-weight: bold; }
 
         /* Main Content Area */
-        .content-area { flex: 3; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); min-height: 600px; }
+        .content-area { flex: 3; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); min-height: 800px; }
         .lesson-section { display: none; }
         .active-section { display: block; }
 
         h2 { margin-bottom: 20px; color: #2d3436; border-left: 5px solid #FFCC00; padding-left: 15px; }
-        h3 { margin: 25px 0 15px 0; color: #d63031; }
+        h3 { margin: 30px 0 15px 0; color: #d63031; text-decoration: underline; }
         p { margin-bottom: 15px; color: #555; font-size: 1.1rem; }
 
         /* Table Styling */
         .table-container { margin: 20px 0; overflow-x: auto; }
         table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
         th, td { padding: 12px; text-align: left; border-bottom: 1px solid #eee; }
-        th { background-color: #f8f9fa; color: #2d3436; border-bottom: 2px solid #FFCC00; }
-        tr:hover { background-color: #fffdf5; }
+        th { background-color: #2d3436; color: #FFCC00; }
+        tr:nth-child(even) { background-color: #fafafa; }
+        tr:hover { background-color: #fffdf0; }
 
-        /* Special highlight for pronunciation */
-        .pro-note { background: #fff4e5; border-left: 4px solid #ffa502; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .pro-note { background: #e3f2fd; border-left: 4px solid #2196f3; padding: 15px; margin: 20px 0; border-radius: 4px; color: #0d47a1; }
 
         /* Signature Section */
         .signature { margin-top: 50px; text-align: right; border-top: 1px solid #eee; padding-top: 20px; font-style: italic; }
@@ -56,7 +56,7 @@
         .contact-info { text-align: right; font-size: 0.95rem; }
         .footer-bottom { text-align: center; border-top: 1px solid #444; padding-top: 20px; font-size: 0.85rem; color: #bbb; }
 
-        @media (max-width: 768px) { .layout-wrapper { flex-direction: column; } .main-header { text-align: center; flex-direction: column; } }
+        @media (max-width: 900px) { .layout-wrapper { flex-direction: column; } }
     </style>
 </head>
 <body>
@@ -65,7 +65,7 @@
         <div class="logo">DD</div>
         <div class="banner-text">
             <h1>Deutsch Desi</h1>
-            <p>Level A1: Beginner German Course</p>
+            <p>Level A1: Master German Foundation</p>
         </div>
     </header>
 
@@ -74,8 +74,8 @@
             <h3>German Language A1</h3>
             <ul class="lesson-list">
                 <li><a onclick="showLesson('intro')" id="link-intro" class="active">Introduction</a></li>
-                <li><a onclick="showLesson('greetings')" id="link-greetings">Lesson 1: Greetings</a></li>
-                <li><a onclick="showLesson('alphabet')" id="link-alphabet">Lesson 2: Alphabet</a></li>
+                <li><a onclick="showLesson('greetings')">Lesson 1: Greetings</a></li>
+                <li><a onclick="showLesson('alphabet')">Lesson 2: Alphabet A-Z</a></li>
                 <li><a onclick="showLesson('sounds')">Lesson 3: Letters & Sound</a></li>
                 <li><a onclick="showLesson('intro-self')">Lesson 4: Introducing Yourself</a></li>
             </ul>
@@ -86,13 +86,16 @@
             <!-- SECTION: INTRODUCTION -->
             <section id="intro" class="lesson-section active-section">
                 <h2>Welcome to Level A1</h2>
-                <p>Welcome! This curriculum is designed to help you master German using the context of Urdu, Hindi, and English.</p>
+                <p>Level A1 is the starting point of your German language journey. In this course, we use a specialized method designed specifically for speakers of <strong>Urdu</strong> and <strong>Hindi</strong>.</p>
+                <p>We will focus on building your vocabulary and understanding basic sentence structures through simple, relatable examples in your native languages.</p>
                 <div class="table-container">
                     <table>
                         <thead><tr><th>German</th><th>English</th><th>Urdu</th><th>Hindi</th></tr></thead>
                         <tbody>
                             <tr><td>Guten Tag</td><td>Good Day</td><td>آپ کا دن اچھا گزرے</td><td>शुभ दिन</td></tr>
                             <tr><td>Wie geht es Ihnen?</td><td>How are you?</td><td>آپ کیسے ہیں؟</td><td>आप कैसे हैं?</td></tr>
+                            <tr><td>Kind</td><td>Child</td><td>بچہ</td><td>बच्चा</td></tr>
+                            <tr><td>Brot</td><td>Bread</td><td>روٹی</td><td>रोटी</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -101,64 +104,83 @@
             <!-- SECTION: LESSON 1 GREETINGS -->
             <section id="greetings" class="lesson-section">
                 <h2>Lesson 1: German Greetings (Begrüßungen)</h2>
+                <p>In German, greetings change based on the time of day and the level of formality.</p>
                 <div class="table-container">
                     <table>
-                        <thead><tr><th>German</th><th>English</th><th>Urdu</th><th>Hindi</th></tr></thead>
+                        <thead>
+                            <tr>
+                                <th>German</th>
+                                <th>English</th>
+                                <th>Urdu (اردو)</th>
+                                <th>Hindi (हिंदी)</th>
+                            </tr>
+                        </thead>
                         <tbody>
                             <tr><td>Hallo</td><td>Hello</td><td>ہیلو / سلام</td><td>नमस्ते</td></tr>
                             <tr><td>Guten Morgen</td><td>Good Morning</td><td>صبح بخیر</td><td>शुभ प्रभात</td></tr>
+                            <tr><td>Guten Tag</td><td>Good Day / Afternoon</td><td>آپ کا دن اچھا گزرے</td><td>शुभ दिन</td></tr>
+                            <tr><td>Guten Abend</td><td>Good Evening</td><td>شام بخیر</td><td>शुभ संध्या</td></tr>
                             <tr><td>Gute Nacht</td><td>Good Night</td><td>شب بخیر</td><td>शुभ रात्रि</td></tr>
-                            <tr><td>Tschüss</td><td>Bye</td><td>اللہ حافظ</td><td>अलविदा</td></tr>
+                            <tr><td>Tschüss</td><td>Bye (Informal)</td><td>اللہ حافظ</td><td>अलविदा</td></tr>
+                            <tr><td>Auf Wiedersehen</td><td>Goodbye (Formal)</td><td>پھر ملیں گے</td><td>फिर मिलेंगे</td></tr>
                         </tbody>
                     </table>
                 </div>
             </section>
 
-            <!-- SECTION: LESSON 2 ALPHABET -->
+            <!-- SECTION: LESSON 2 FULL ALPHABET -->
             <section id="alphabet" class="lesson-section">
-                <h2>Lesson 2: The German Alphabet (Das Alphabet)</h2>
-                <p>The German alphabet has the same 26 letters as English, plus 4 special characters. However, the <strong>pronunciation</strong> is different.</p>
-                
-                <h3>Special Characters (The Umlauts)</h3>
-                <div class="table-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>German Letter</th>
-                                <th>Name/Sound</th>
-                                <th>Urdu Equivalent</th>
-                                <th>Hindi Equivalent</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>Ä / ä</td><td>Ae</td><td>اے (A-ey)</td><td>ए</td></tr>
-                            <tr><td>Ö / ö</td><td>Oe</td><td>اوئے (Similar to 'O' with rounded lips)</td><td>ओ (rounded)</td></tr>
-                            <tr><td>Ü / ü</td><td>Ue</td><td>ایو (Similar to 'U' in 'Music')</td><td>यू</td></tr>
-                            <tr><td>ß</td><td>Eszett (Double S)</td><td>سین (Double S sound)</td><td>स (Double S)</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="pro-note">
-                    <strong>Desi Tip:</strong> The letter <strong>"W"</strong> in German is pronounced like the English <strong>"V"</strong> (e.g., <em>Volkswagen</em> is pronounced <em>Folks-vagen</em>).
-                </div>
-
-                <h3>Common Alphabet Sounds</h3>
+                <h2>Lesson 2: The German Alphabet (A-Z)</h2>
+                <p>The names of the letters in German are different from English. Master these sounds first:</p>
                 <div class="table-container">
                     <table>
                         <thead>
                             <tr>
                                 <th>Letter</th>
-                                <th>German Pronunciation</th>
-                                <th>English Example</th>
+                                <th>Pronunciation</th>
+                                <th>Urdu/Hindi Guide</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td>A</td><td>Ah</td><td>Like 'F<strong>a</strong>ther'</td></tr>
-                            <tr><td>E</td><td>Ay</td><td>Like 'P<strong>ay</strong>'</td></tr>
-                            <tr><td>I</td><td>Ee</td><td>Like 'S<strong>ee</strong>'</td></tr>
-                            <tr><td>J</td><td>Yot</td><td>Pronounced like '<strong>Y</strong>' in 'Yes'</td></tr>
-                            <tr><td>V</td><td>Fau</td><td>Pronounced like '<strong>F</strong>' in 'Fish'</td></tr>
+                            <tr><td>A</td><td>Ah</td><td>آ (Aa)</td></tr>
+                            <tr><td>B</td><td>Beh</td><td>بے (Bay)</td></tr>
+                            <tr><td>C</td><td>Tseh</td><td>تسے (Tseh)</td></tr>
+                            <tr><td>D</td><td>Deh</td><td>دے (Day)</td></tr>
+                            <tr><td>E</td><td>Eh</td><td>اے (A-ey)</td></tr>
+                            <tr><td>F</td><td>Ef</td><td>ایف (Ef)</td></tr>
+                            <tr><td>G</td><td>Geh</td><td>گے (Gay)</td></tr>
+                            <tr><td>H</td><td>Hah</td><td>ہا (Haa)</td></tr>
+                            <tr><td>I</td><td>Ee</td><td>ای (Ee)</td></tr>
+                            <tr><td>J</td><td>Yot</td><td>یوٹ (Yot)</td></tr>
+                            <tr><td>K</td><td>Kah</td><td>کا (Kaa)</td></tr>
+                            <tr><td>L</td><td>El</td><td>ایل (El)</td></tr>
+                            <tr><td>M</td><td>Em</td><td>ایم (Em)</td></tr>
+                            <tr><td>N</td><td>En</td><td>این (En)</td></tr>
+                            <tr><td>O</td><td>Oh</td><td>او (Oh)</td></tr>
+                            <tr><td>P</td><td>Peh</td><td>پے (Pay)</td></tr>
+                            <tr><td>Q</td><td>Koo</td><td>کو (Koo)</td></tr>
+                            <tr><td>R</td><td>Er</td><td>ایر (Er)</td></tr>
+                            <tr><td>S</td><td>Es</td><td>ایس (Es)</td></tr>
+                            <tr><td>T</td><td>Teh</td><td>ٹے (Tay)</td></tr>
+                            <tr><td>U</td><td>Oo</td><td>اوو (Oo)</td></tr>
+                            <tr><td>V</td><td>Fau</td><td>فاو (Fao)</td></tr>
+                            <tr><td>W</td><td>Veh</td><td>وے (Vay)</td></tr>
+                            <tr><td>X</td><td>Iks</td><td>اکس (Iks)</td></tr>
+                            <tr><td>Y</td><td>Ypsilon</td><td>ایپسیلون</td></tr>
+                            <tr><td>Z</td><td>Tsett</td><td>ٹسیٹ</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Special German Letters</h3>
+                <div class="table-container">
+                    <table>
+                        <thead><tr><th>Letter</th><th>Name</th><th>Sound</th></tr></thead>
+                        <tbody>
+                            <tr><td>Ä / ä</td><td>A-Umlaut</td><td>Like 'e' in 'Bed'</td></tr>
+                            <tr><td>Ö / ö</td><td>O-Umlaut</td><td>Rounded O</td></tr>
+                            <tr><td>Ü / ü</td><td>U-Umlaut</td><td>Rounded U</td></tr>
+                            <tr><td>ß</td><td>Eszett</td><td>Sharp 'S' (سین)</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -189,9 +211,7 @@
             sections.forEach(section => section.classList.remove('active-section'));
 
             const selected = document.getElementById(lessonId);
-            if(selected) {
-                selected.classList.add('active-section');
-            }
+            if(selected) { selected.classList.add('active-section'); }
 
             const links = document.querySelectorAll('.lesson-list a');
             links.forEach(link => link.classList.remove('active'));
